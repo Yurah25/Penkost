@@ -1,25 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kos Putri Boyolali</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AxA Hotels</title>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Daftar Kamar Kos</h1>
-    <div id="kamar-list">
-        {% for kamar in kamar_list %}
-        <div class="kamar-item" data-deskripsi="{{ kamar.deskripsi }}">
-            <h3>{{ kamar.nama }}</h3>
-            <p>Harga: {{ kamar.harga }}</p>
-            <p>Lokasi: {{ kamar.lokasi }}</p>
-            <!-- Menampilkan gambar untuk tiap kamar -->
-            <img src="{{ url_for('static', filename='images/' + kamar.foto) }}" alt="{{ kamar.nama }}" style="width:200px;height:auto;">
-        </div>
-        {% endfor %}
+  <nav class="navbar">
+    <div class="nav-container">
+    <div class="logo">
+    <i class="user" data-feather="home"></i>
+    <h3>PENKOST<span>PBG</span></h3>
+</div>
+      <ul class="nav-links">
+        <li><a href="">Home</a></li>
+        <li><a href="">tentang</a></li>
+        <li><a href="">Kost</a></li>
+      </ul>
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="Login.html" class="btn">Login</a>
     </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Welcome to the PENKOSTPBG</h1>
+      <p>Discover luxury accommodations and exceptional service. Experience comfort like never before with our premium hotel booking platform.</p>
+      <div class="search-form">
+        <input type="text" placeholder="Please Select the Location">
+        <input type="date" placeholder="Check-in">
+        <input type="date" placeholder="Check-out">
+        <button type="button">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h2>Why Choose Basera</h2>
+    <p>Experience the best in hospitality and comfort</p>
+    <div class="info-content">
+      <div class="info-text">
+        <h3>Our Hotel Booking Advantage</h3>
+        <p>Book hotels that welcome your furry companions. Find pet-friendly accommodations that ensure both you and your pets have a comfortable stay with premium amenities.</p>
+        <button class="btn-secondary">Check Now</button>
+      </div>
+      <img src="/placeholder.svg?height=400&width=500" alt="Luxury Hotel Interior">
+    </div>
+  </section>
+
+  <section class="rooms">
+    <h2>Premium Rooms & Suites</h2>
+    <p>Choose from our collection of carefully curated accommodations</p>
+    <div class="card-container">
+      <div class="card">
+        <img src="/placeholder.svg?height=200&width=300" alt="Deluxe Room">
+        <div class="card-content">
+          <h4>Deluxe Room</h4>
+          <p>Spacious room with modern amenities, perfect for business travelers and couples seeking comfort.</p>
+          <a href="#" class="card-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/placeholder.svg?height=200&width=300" alt="Executive Suite">
+        <div class="card-content">
+          <h4>Executive Suite</h4>
+          <p>Luxurious suite with separate living area, ideal for extended stays and special occasions.</p>
+          <a href="#" class="card-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/placeholder.svg?height=200&width=300" alt="Presidential Suite">
+        <div class="card-content">
+          <h4>Presidential Suite</h4>
+          <p>Ultimate luxury experience with panoramic views and exclusive amenities for discerning guests.</p>
+          <a href="#" class="card-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h2>Exceptional Service</h2>
+    <p>24/7 support and premium amenities for your perfect stay</p>
+    <div class="info-content reverse">
+      <img src="/placeholder.svg?height=400&width=500" alt="Hotel Service">
+      <div class="info-text">
+        <h3>World-Class Hospitality</h3>
+        <p>Experience unparalleled service with our dedicated concierge team, spa services, fine dining restaurants, and exclusive member benefits.</p>
+        <button class="btn-secondary">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Hotels</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-bottom">
+        <p>Designed by <a href="https://i-m-akshat.github.io/AkshatDwivedi_Portfolio/" target="_blank">Akshat Dwivedi</a></p>
+        <p>&copy; 2024 Basera Hotels. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      navToggle.classList.toggle('active');
+    });
+  </script>
+    
+    <script>
+      feather.replace();
+    </script>
 </body>
 </html>
