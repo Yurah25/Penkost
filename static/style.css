@@ -7,6 +7,12 @@
 .logo{
     display: flex;
 }
+.logo span{
+    color: #007bff;
+}
+.user{
+    color: #007bff;
+}
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #fff;
