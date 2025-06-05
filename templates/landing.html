@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - SewaKamarKos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='landing.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Bagian logo dan Nama Perusahaan -->
+        <div class="header">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo kos boyolali" class="logo">
+            <h1>Kost nyaman di tengah Boyolali (HP : 089 636 665 616)</h1>
+        </div>
+
+        <!-- Bagian Foto Bangunan -->
+        <div class="photos">
+            <img src="{{ url_for('static', filename='images/outdoor1.jpg') }}" alt="Kos Putri 1" class="photo">
+            <img src="{{ url_for('static', filename='images/outdoor2.jpg') }}" alt="Kos Putri 2" class="photo">
+            <img src="{{ url_for('static', filename='images/outdoor3.jpg') }}" alt="Kos Putri 3" class="photo">
+        </div>
+
+        <!-- Tombol untuk Masuk ke Halaman Utama -->
+        <div class="enter-button">
+            <a href="{{ url_for('home') }}" class="button">Masuk</a>
+        </div>
+    </div>
+</body>
+</html>
