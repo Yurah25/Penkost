@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cari Kost - PENKOSTPBG</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="menu-overlay"></div>
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}"><h2>PENKOST<span>PBG</span></h2></a>
+            </div>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">Tentang</a></li>
+                    <li><a href="{{ url_for('search_kost') }}">Cari Kost</a></li>
+                    <li><a href="{{ url_for('contact') }}">Kontak</a></li>
+                </ul>
+            </nav>
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="page-section">
+            <div class="container search-page-container">
+                <aside class="filter-sidebar">
+                    <h3><i data-feather="filter"></i> Filter Pencarian</h3>
+                    <form method="GET" action="{{ url_for('search_kost') }}">
+                        <div class="filter-group">
+                            <label for="urutkan">Urutkan Berdasarkan</label>
+                            <select name="urutkan" id="urutkan">
+                                <option value="terbaru" {% if filter_args.urutkan == 'terbaru' or not filter_args.urutkan %}selected{% endif %}>Terbaru</option>
+                                <option value="termurah" {% if filter_args.urutkan == 'termurah' %}selected{% endif %}>Harga Termurah</option>
+                                <option value="termahal" {% if filter_args.urutkan == 'termahal' %}selected{% endif %}>Harga Termahal</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Tipe Sewa</label>
+                            <div><input type="radio" id="sewa_semua" name="tipe_sewa" value="semua" {% if not filter_args.tipe_sewa or filter_args.tipe_sewa == 'semua' %}checked{% endif %}> <label for="sewa_semua">Semua</label></div>
+                            <div><input type="radio" id="sewa_bulan" name="tipe_sewa" value="bulan" {% if filter_args.tipe_sewa == 'bulan' %}checked{% endif %}> <label for="sewa_bulan">Per Bulan</label></div>
+                            <div><input type="radio" id="sewa_tahun" name="tipe_sewa" value="tahun" {% if filter_args.tipe_sewa == 'tahun' %}checked{% endif %}> <label for="sewa_tahun">Per Tahun</label></div>
+                        </div>
+                        <div class="filter-group">
+                            <label>Fasilitas</label>
+                            <div><input type="checkbox" id="include_barang" name="include_barang" value="true" {% if filter_args.include_barang %}checked{% endif %}> <label for="include_barang">Isi Lengkap</label></div>
+                            <div><input type="checkbox" id="wc_dalam" name="wc_dalam" value="true" {% if filter_args.wc_dalam %}checked{% endif %}> <label for="wc_dalam">Kamar Mandi Dalam</label></div>
+                        </div>
+                        <button type="submit" class="btn">Terapkan Filter</button>
+                    </form>
+                </aside>
+                <div class="results-grid">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 30px;">Hasil Pencarian</h2>
+                    <div class="card-container">
+                        {% for kost in kosts %}
+                        <div class="card">
+                            <img src="{{ url_for('static', filename='images/' + kost.foto) }}" alt="{{ kost.nama }}">
+                            <div class="card-content">
+                                <h4>{{ kost.nama }}</h4>
+                                <p class="harga">{{ kost.harga | rupiah }} / {{ kost.tipe_sewa }}</p>
+                                <p class="lokasi"><i data-feather="map-pin"></i> {{ kost.lokasi }}</p>
+                                <a href="{{ url_for('kost_detail', kost_id=kost.id) }}" class="btn">Lihat Detail</a>
+                            </div>
+                        </div>
+                        {% else %}
+                        <p>Tidak ada kost yang sesuai dengan kriteria filter Anda.</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('search_kost') }}">Cari Kost</a>
+                <a href="{{ url_for('about') }}">Tentang</a>
+                <a href="{{ url_for('contact') }}">Kontak</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PenkostPBG. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){const navToggle=document.getElementById('nav-toggle'),navLinks=document.getElementById('nav-links'),menuOverlay=document.getElementById('menu-overlay');navToggle&&navToggle.addEventListener('click',()=>{navToggle.classList.toggle('active'),navLinks.classList.toggle('active'),menuOverlay.classList.toggle('active')}),menuOverlay&&menuOverlay.addEventListener('click',()=>{navToggle.classList.remove('active'),navLinks.classList.remove('active'),menuOverlay.classList.remove('active')}),feather.replace()});
+    </script>
+</body>
+</html>

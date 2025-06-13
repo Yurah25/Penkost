@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Home - PENKOSTPBG</title>
+    <title>{{ kost.nama }} - PENKOSTPBG</title>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -29,43 +29,37 @@
         </div>
     </header>
     <main>
-        <section class="hero" style="background-image: url('{{ url_for('static', filename='images/hero-bg.jpg') }}');">
-            <div class="container">
-                <h1>SELAMAT DATANG DI PENKOST<span>PBG</span></h1>
-                <p>Carilah Kost yang bagus sesuai kebutuhanmu dan harga yang diinginkan.</p>
-                <a href="{{ url_for('search_kost') }}" class="btn" style="background-color:var(--white-color); color:var(--primary-color);">Cari Kost Sekarang</a>
-            </div>
-        </section>
         <section class="page-section">
-            <div class="container">
-                <h2 class="section-title">Kenapa Pilih PENKOSTPBG</h2>
-                <p class="section-subtitle">Nikmati Kenyamanan dan Pengalaman Kost Terbaik</p>
-                <div class="info-content">
-                    <img src="{{ url_for('static', filename='images/kost-interior-1.jpg') }}" alt="Interior Kost Premium">
-                    <div class="info-text">
-                        <h3>Kelebihan Booking PENKOST</h3>
-                        <p>Sewa kost yang mudah dicari untuk Anda. Dengan menemukan Kost yang sesuai dengan kebutuhan dan harga yang diinginkan.</p>
-                        <a href="{{ url_for('search_kost') }}" class="btn btn-secondary">Check Now</a>
+            <div class="container detail-container">
+                <div class="detail-grid">
+                    <div>
+                        <img src="{{ url_for('static', filename='images/' + kost.foto) }}" alt="{{ kost.nama }}" class="detail-kost-img">
                     </div>
-                </div>
-            </div>
-        </section>
-        <section class="page-section" style="background-color: var(--light-gray-color);">
-            <div class="container">
-                <h2 class="section-title">Pilihan Kost Terbaru</h2>
-                <p class="section-subtitle">Pilih dari koleksi akomodasi kami yang dipilih dengan cermat.</p>
-                <div class="card-container">
-                    {% for kost in pilihan_kost %}
-                    <div class="card">
-                        <img src="{{ url_for('static', filename='images/' + kost.foto) }}" alt="{{ kost.nama }}">
-                        <div class="card-content">
-                            <h4>{{ kost.nama }}</h4>
-                            <p class="harga">{{ kost.harga | rupiah }} / {{ kost.tipe_sewa }}</p>
-                            <p class="lokasi"><i data-feather="map-pin"></i> {{ kost.lokasi }}</p>
-                            <a href="{{ url_for('kost_detail', kost_id=kost.id) }}" class="btn">Lihat Detail</a>
+                    <div>
+                        <h1>{{ kost.nama }}</h1>
+                        <p class="lokasi"><i data-feather="map-pin"></i> {{ kost.lokasi }}</p>
+                        <p class="harga" style="font-size: 1.8rem;">{{ kost.harga | rupiah }} / {{ kost.tipe_sewa }}</p>
+                        <h3>Fasilitas</h3>
+                        <ul class="fasilitas-list">
+                            {% for item in kost.fasilitas %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                        <div class="action-buttons">
+                            <a href="https://wa.me/{{ kost.whatsapp }}" target="_blank" class="btn btn-whatsapp"><i data-feather="message-circle"></i> Hubungi via WhatsApp</a>
+                            <a href="https://instagram.com/{{ kost.instagram }}" target="_blank" class="btn btn-instagram"><i data-feather="instagram"></i> Lihat Instagram</a>
                         </div>
                     </div>
-                    {% endfor %}
+                </div>
+                <div>
+                    <h2 class="section-title" style="text-align:left; margin-top:30px;">Deskripsi Kost</h2>
+                    <p>{{ kost.deskripsi }}</p>
+                </div>
+                <div class="detail-map">
+                    <h2 class="section-title">Lokasi di Peta</h2>
+                    <div class="map-container">
+                        <iframe src="{{ kost.maps_embed_url }}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
         </section>

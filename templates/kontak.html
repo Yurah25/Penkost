@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Home - PENKOSTPBG</title>
+    <title>Kontak Kami - PENKOSTPBG</title>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -29,43 +29,30 @@
         </div>
     </header>
     <main>
-        <section class="hero" style="background-image: url('{{ url_for('static', filename='images/hero-bg.jpg') }}');">
-            <div class="container">
-                <h1>SELAMAT DATANG DI PENKOST<span>PBG</span></h1>
-                <p>Carilah Kost yang bagus sesuai kebutuhanmu dan harga yang diinginkan.</p>
-                <a href="{{ url_for('search_kost') }}" class="btn" style="background-color:var(--white-color); color:var(--primary-color);">Cari Kost Sekarang</a>
-            </div>
-        </section>
         <section class="page-section">
             <div class="container">
-                <h2 class="section-title">Kenapa Pilih PENKOSTPBG</h2>
-                <p class="section-subtitle">Nikmati Kenyamanan dan Pengalaman Kost Terbaik</p>
-                <div class="info-content">
-                    <img src="{{ url_for('static', filename='images/kost-interior-1.jpg') }}" alt="Interior Kost Premium">
-                    <div class="info-text">
-                        <h3>Kelebihan Booking PENKOST</h3>
-                        <p>Sewa kost yang mudah dicari untuk Anda. Dengan menemukan Kost yang sesuai dengan kebutuhan dan harga yang diinginkan.</p>
-                        <a href="{{ url_for('search_kost') }}" class="btn btn-secondary">Check Now</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="page-section" style="background-color: var(--light-gray-color);">
-            <div class="container">
-                <h2 class="section-title">Pilihan Kost Terbaru</h2>
-                <p class="section-subtitle">Pilih dari koleksi akomodasi kami yang dipilih dengan cermat.</p>
-                <div class="card-container">
-                    {% for kost in pilihan_kost %}
-                    <div class="card">
-                        <img src="{{ url_for('static', filename='images/' + kost.foto) }}" alt="{{ kost.nama }}">
-                        <div class="card-content">
-                            <h4>{{ kost.nama }}</h4>
-                            <p class="harga">{{ kost.harga | rupiah }} / {{ kost.tipe_sewa }}</p>
-                            <p class="lokasi"><i data-feather="map-pin"></i> {{ kost.lokasi }}</p>
-                            <a href="{{ url_for('kost_detail', kost_id=kost.id) }}" class="btn">Lihat Detail</a>
+                <h1 class="section-title">Hubungi Kami</h1>
+                <p class="section-subtitle">Punya pertanyaan atau butuh bantuan? Jangan ragu untuk menghubungi kami.</p>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Informasi Kontak</h3>
+                        <p><i data-feather="map-pin"></i> Jl. Jenderal Soedirman No. 7, Purwokerto</p>
+                        <p><i data-feather="phone"></i> (0281) 123-456</p>
+                        <p><i data-feather="mail"></i> info@penkostpbg.com</p>
+                        <div class="detail-map" style="margin-top: 20px;">
+                            <div class="map-container">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.403920993514!2d109.3664973142756!3d-7.420038975101034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65598da2355555%3A0x863375888e2f0332!2sAlun-Alun%20Purbalingga!5e0!3m2!1sid!2sid!4v1626325345123!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
                         </div>
                     </div>
-                    {% endfor %}
+                    <div class="contact-form">
+                        <h3>Kirim Pesan</h3>
+                        <form action="#">
+                            <input type="text" placeholder="Nama Anda" required>
+                            <textarea placeholder="Pesan Anda..." required></textarea>
+                            <button type="submit" class="btn">Kirim Pesan</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
