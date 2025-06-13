@@ -11,8 +11,10 @@
     <div id="menu-overlay"></div>
     <header class="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                <a href="{{ url_for('index') }}"><h2>PENKOST<span>PBG</span></h2></a>
+          <div class="logo">            
+                <a href="{{ url_for('index') }}">
+                  <img class="img-logo" src="{{ url_for('static', filename='images/logo.png') }}">
+                  <h2>PENKOST<span>PBG</span></h2></a>  
             </div>
             <nav>
                 <ul class="nav-links" id="nav-links">
@@ -29,7 +31,7 @@
         </div>
     </header>
     <main>
-        <section class="hero" style="background-image: url('{{ url_for('static', filename='images/hero-bg.jpg') }}');">
+        <section class="hero">
             <div class="container">
                 <h1>SELAMAT DATANG DI PENKOST<span>PBG</span></h1>
                 <p>Carilah Kost yang bagus sesuai kebutuhanmu dan harga yang diinginkan.</p>

@@ -131,18 +131,31 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.logo a {
-  text-decoration: none;
-  color: var(--secondary-color);
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-.logo span {
-  color: var(--primary-color);
+
+.logo{
+  display: flex;
+  align-items: center;
 }
 
-main {
-  /* Konten tidak lagi memerlukan padding-top karena navbar tidak mengubah alur dokumen */
+.logo a {
+ display: flex; 
+ align-items: center;
+ text-decoration: none;
+ color: var(--secondary-color);
+ font-weight: 700;
+ font-size: clamp(1rem,1,1.2rem,1.5rem);
+ padding: 0;
+ overflow: hidden;
+}
+
+.logo span {
+ color: var(--primary-color);
+}
+
+.img-logo{
+  
+ width: 2.5rem; 
+  height: auto; /* Pastikan tinggi otomatis */
 }
 
 .footer {
@@ -150,6 +163,7 @@ main {
   color: var(--white-color);
   text-align: center;
   padding: 40px 0;
+  overflow: hidden;
 }
 .footer-links {
     display: flex;

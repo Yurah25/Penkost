@@ -11,8 +11,10 @@
     <div id="menu-overlay"></div>
     <header class="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                <a href="{{ url_for('index') }}"><h2>PENKOST<span>PBG</span></h2></a>
+          <div class="logo">            
+                <a href="{{ url_for('index') }}">
+                  <img class="img-logo" src="{{ url_for('static', filename='images/logo.png') }}">
+                  <h2>PENKOST<span>PBG</span></h2></a>  
             </div>
             <nav>
                 <ul class="nav-links" id="nav-links">
