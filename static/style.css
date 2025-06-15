@@ -158,39 +158,119 @@ body {
   height: auto; /* Pastikan tinggi otomatis */
 }
 
+/* ========================================= */
+/* ===      GAYA FOOTER BARU & MODERN      === */
+/* ========================================= */
+
 .footer {
-  background: var(--secondary-color);
-  color: var(--white-color);
-  text-align: center;
-  padding: 40px 0;
-  overflow: hidden;
-}
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
-}
-.footer-links a {
-    text-decoration: none;
-    color: #ccc;
-    transition: color 0.3s ease;
-}
-.footer-links a:hover {
-    color: var(--white-color);
-}
-.footer-bottom {
-    font-size: 0.9rem;
-    color: #999;
-    border-top: 1px solid #555;
-    padding-top: 20px;
-    margin-top: 20px;
-}
-.footer-bottom span {
-    color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: #a9a9a9; /* Warna teks yang lebih lembut */
+  padding: 60px 0 20px 0;
 }
 
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-col h4 {
+  color: var(--white-color);
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Garis bawah dekoratif untuk judul kolom */
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.footer-about .logo a {
+  font-size: 1.8rem;
+  color: var(--white-color);
+}
+
+.footer-about p {
+  margin-top: 15px;
+  line-height: 1.7;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #a9a9a9;
+  transition: all 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: var(--white-color);
+  padding-left: 5px;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-contact i {
+  margin-top: 5px;
+  color: var(--primary-color);
+}
+
+.footer-socials {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  font-size: 0.9rem;
+  color: #a9a9a9;
+}
+
+.footer-bottom span {
+  color: var(--primary-color);
+}
 /* === 4. Navigasi Mobile === */
 .nav-toggle {
   display: none;
@@ -246,6 +326,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  background-image: url("images/hero.jpeg");
   justify-content: center;
   background-size: cover;
   background-position: center;
@@ -291,10 +372,12 @@ body {
 .info-content.reverse {
   flex-direction: row-reverse;
 }
+/* --- GANTI DENGAN BLOK BARU INI --- */
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  display: flex; /* Menggunakan Flexbox */
+  flex-wrap: wrap; /* Izinkan kartu untuk pindah ke baris baru */
+  justify-content: center; /* KUNCI UTAMA: Pusatkan semua kartu secara horizontal */
+  gap: 30px; /* Jarak antar kartu */
 }
 .card {
   background: var(--white-color);

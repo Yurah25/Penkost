@@ -107,18 +107,56 @@
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="{{ url_for('index') }}">Home</a>
-                <a href="{{ url_for('search_kost') }}">Cari Kost</a>
-                <a href="{{ url_for('about') }}">Tentang</a>
-                <a href="{{ url_for('contact') }}">Kontak</a>
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div class="footer-col footer-about">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}"><h4>PENKOST<span>PBG</span></h4></a>
+                </div>
+                <p>Platform terpercaya untuk membantu Anda menemukan kost idaman di Purbalingga dengan cepat, mudah, dan aman.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 PenkostPBG. All rights reserved.</p>
+
+            <div class="footer-col footer-links">
+                <h4>Jelajahi</h4>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('search_kost') }}">Cari Kost</a></li>
+                    <li><a href="{{ url_for('about') }}">Tentang Kami</a></li>
+                    <li><a href="{{ url_for('contact') }}">Kontak</a></li>
+                </ul>
             </div>
+
+            <div class="footer-col footer-links">
+                <h4>Dukungan</h4>
+                <ul>
+                    <li><a href="#">Pusat Bantuan (FAQ)</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p><i data-feather="map-pin"></i> Purwokerto, Jawa Tengah, Indonesia</p>
+                <p><i data-feather="phone"></i> +62 812 3456 7890</p>
+                <p><i data-feather="mail"></i> info@penkostpbg.com</p>
+
+                <div class="footer-socials">
+                    <a href="#" target="_blank"><i data-feather="facebook"></i></a>
+                    <a href="#" target="_blank"><i data-feather="instagram"></i></a>
+                    <a href="#" target="_blank"><i data-feather="twitter"></i></a>
+                    <a href="#" target="_blank"><i data-feather="youtube"></i></a>
+                </div>
+            </div>
+
         </div>
-    </footer>
+
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2025 | Dibuat dengan ❤️️ oleh <span>PENKOSTPBG</span>.</p>
+        </div>
+    </div>
+</footer>
     <script>
         document.addEventListener('DOMContentLoaded',function(){const navToggle=document.getElementById('nav-toggle'),navLinks=document.getElementById('nav-links'),menuOverlay=document.getElementById('menu-overlay');navToggle&&navToggle.addEventListener('click',()=>{navToggle.classList.toggle('active'),navLinks.classList.toggle('active'),menuOverlay.classList.toggle('active')}),menuOverlay&&menuOverlay.addEventListener('click',()=>{navToggle.classList.remove('active'),navLinks.classList.remove('active'),menuOverlay.classList.remove('active')}),feather.replace()});
     </script>
