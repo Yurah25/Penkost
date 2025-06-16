@@ -1,124 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AxA Hotels</title>
-  <script src="https://unpkg.com/feather-icons"></script>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home - PENKOSTPBG</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=DhbU4WVAR4t53Ck0r-ynbMhqH5-oLDynzmiCGKO6T6sR0v6HY1ClLrdavpCFdOUrKgKJq7AERAnWUnWPS-vceZOug9Zs7Gc3kj8rSKnVNhDuU-Dj4znIbjiwbhK9ApD_Lf4wA59qnzZVEu2lKkp9N0XjwV2vqLGt83rANnEzzDgVPBCMr0W9oHm2RlJ7qKpcqZJjr_TEaIZ17OA3GMoXTURUi19rT79eszuTX2J87Dkv6Bp6Q6Jh4r8Q72Y_lCsZlv063P4r4lySqx9pAdqqauhlJkwMkw3FFINjzVRXCdBVu3KZW28Q-tipzsq9NmNCy00aaU1LKhOsyzTDaV-XXYDjO3neVPkyoZDpJrvl0LyOQcxQAw4IwK7aLbZpeNBz" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9maWxlczA5Lm9haXVzZXJjb250ZW50LmNvbS9maWxlLVA0cG15c0FKajlRa3lQaGVtTWJpQWM_c2U9MjAyNS0wNi0xNlQxMCUzYTA2JTNhMjVaJnNwPXImc3Y9MjAyNC0wOC0wNCZzcj1iJnJzY2M9bWF4LWFnZSUzZDI5OSUyYyUyMGltbXV0YWJsZSUyYyUyMHByaXZhdGUmcnNjZD1hdHRhY2htZW50JTNiJTIwZmlsZW5hbWUlM2RpbmRleC5odG1sJnNpZz1obXJrQkhNdU9qM3d3NkZsZEJUOUZvVVFSOUptOUZSWDRzL2FNQkw0ZXdrJTNk"/><script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-    <div class="logo">
-    <i class="user" data-feather="home"></i>
-    <h3>PENKOST<span>PBG</span></h3>
-</div>
-      <ul class="nav-links">
-        <li><a href="">Home</a></li>
-        <li><a href="">tentang</a></li>
-        <li><a href="">Kost</a></li>
-      </ul>
-      <div class="nav-toggle" id="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <a href="Login.html" class="btn">Login</a>
-    </div>
-  </nav>
-
-  <section class="hero">
-    <div class="hero-overlay">
-      <h1>SELAMAT DATANG DI PENKOST<span>PBG</span></h1>
-      <p>Carilah Kost yang bagus sesuai kebutuhan mu dan harga yang diinginkan</p>
-    </div>
-  </section>
-
-  <section class="info-section">
-    <h2>Kenapa Pilih PENKOSTPBG</h2>
-    <p>Nikmati Kenyamanan dan Pengalaman Kost Terbaik </p>
-    <div class="info-content">
-      <div class="info-text">
-        <h3>Kelebihan Booking PENKOST</h3>
-        <p>Sewa kost yang ramah bagi hewan peliharaan Anda. Temukan akomodasi ramah hewan peliharaan yang memastikan Anda dan hewan peliharaan Anda mendapatkan pengalaman menetap yang nyaman dengan fasilitas yang memeadai.</p>
-        <button class="btn-secondary">Check Now</button>
-      </div>
-      <img src="/placeholder.svg?height=400&width=500" alt="Interior Kost Premium">
-    </div>
-  </section>
-
-  <section class="rooms">
-    <h2>Pilihan Kost</h2>
-    <p>Pilih dari koleksi akomodasi kami yang dipilih dengan cermat</p>
-    <div class="card-container">
-      <div class="card">
-        <img src="/placeholder.svg?height=200&width=300" alt="Deluxe Room">
-        <div class="card-content">
-          <h4>Kost Campuran</h4>
-          <p>Kost campuran dengan harga terjangkau dan fasilitas yang memadai.</p>
-          <a href="#" class="card-btn">Book Now</a>
+    <div id="menu-overlay"></div>
+    <header class="navbar">
+        <div class="container nav-container">
+          <div class="logo">            
+                <a href="{{ url_for('index') }}">
+                  <img class="img-logo" src="{{ url_for('static', filename='images/logo.png') }}">
+                  <h2>PENKOST<span>PBG</span></h2></a>  
+            </div>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">Tentang</a></li>
+                    <li><a href="{{ url_for('search_kost') }}">Cari Kost</a></li>
+                    <li><a href="{{ url_for('contact') }}">Kontak</a></li>
+                </ul>
+            </nav>
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span><span></span><span></span>
+            </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="/placeholder.svg?height=200&width=300" alt="Executive Suite">
-        <div class="card-content">
-          <h4>Kost Cowok</h4>
-          <p>Kost khusus cowok yang nyaman dan murah.</p>
-          <a href="#" class="card-btn">Book Now</a>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>SELAMAT DATANG DI PENKOST<span>PBG</span></h1>
+                <p>Carilah Kost yang bagus sesuai kebutuhanmu dan harga yang diinginkan.</p>
+                <a href="{{ url_for('search_kost') }}" class="btn" style="background-color:var(--white-color); color:var(--primary-color);">Cari Kost Sekarang</a>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <h2 class="section-title">Kenapa Pilih PENKOSTPBG</h2>
+                <p class="section-subtitle">Nikmati Kenyamanan dan Pengalaman Kost Terbaik</p>
+                <div class="info-content">
+                    <img src="{{ url_for('static', filename='images/tengahkota1.jpg') }}" alt="Interior Kost Premium">
+                    <div class="info-text">
+                        <h3>Kelebihan Booking PENKOST</h3>
+                        <p>Sewa kost yang mudah dicari untuk Anda. Dengan menemukan Kost yang sesuai dengan kebutuhan dan harga yang diinginkan.</p>
+                        <a href="{{ url_for('search_kost') }}" class="btn btn-secondary">Check Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section" style="background-color: var(--light-gray-color);">
+            <div class="container">
+                <h2 class="section-title">Pilihan Kost Terbaru</h2>
+                <p class="section-subtitle">Pilih dari koleksi akomodasi kami yang dipilih dengan cermat.</p>
+                <div class="card-container">
+                    {% for kost in pilihan_kost %}
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/' + kost.foto) }}" alt="{{ kost.nama }}">
+                        <div class="card-content">
+                            <h4>{{ kost.nama }}</h4>
+                            <p class="harga">{{ kost.harga | rupiah }} / {{ kost.tipe_sewa }}</p>
+                            <p class="lokasi"><i data-feather="map-pin"></i> {{ kost.lokasi }}</p>
+                            <a href="{{ url_for('kost_detail', kost_id=kost.id) }}" class="btn">Lihat Detail</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div class="footer-col footer-about">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}"><h4>PENKOST<span>PBG</span></h4></a>
+                </div>
+                <p>Platform terpercaya untuk membantu Anda menemukan kost idaman di Purbalingga dengan cepat, mudah, dan aman.</p>
+            </div>
+
+            <div class="footer-col footer-links">
+                <h4>Jelajahi</h4>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('search_kost') }}">Cari Kost</a></li>
+                    <li><a href="{{ url_for('about') }}">Tentang Kami</a></li>
+                    <li><a href="{{ url_for('contact') }}">Kontak</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-links">
+                <h4>Dukungan</h4>
+                <ul>
+                    <li><a href="#">Pusat Bantuan (FAQ)</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p><i data-feather="map-pin"></i> Purwokerto, Jawa Tengah, Indonesia</p>
+                <p><i data-feather="phone"></i> +62 812 3456 7890</p>
+                <p><i data-feather="mail"></i> info@penkostpbg.com</p>
+
+                <div class="footer-socials">
+                    <a href="#" target="_blank"><i data-feather="facebook"></i></a>
+                    <a href="#" target="_blank"><i data-feather="instagram"></i></a>
+                    <a href="#" target="_blank"><i data-feather="twitter"></i></a>
+                    <a href="#" target="_blank"><i data-feather="youtube"></i></a>
+                </div>
+            </div>
+
         </div>
-      </div>
-      <div class="card">
-        <img src="/placeholder.svg?height=200&width=300" alt="Presidential Suite">
-        <div class="card-content">
-          <h4>Kost Cewek</h4>
-          <p>Kost khusus cewek yang terjamin keamanan dan kenyamanannya.</p>
-          <a href="#" class="card-btn">Book Now</a>
+
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2025 | Dibuat dengan ❤️️ oleh <span>PENKOSTPBG</span>.</p>
         </div>
-      </div>
     </div>
-  </section>
-
-  <section class="info-section">
-    <h2>layanan kami</h2>
-    <p></p>
-    <div class="info-content reverse">
-      <img src="/placeholder.svg?height=400&width=500" alt="Layanan Kost">
-      <div class="info-text">
-        <h3>Pencarian Mudah</h3>
-        <p>Melakukan pencarian yang mudah melalu filter yang disesuaikan sesuai kebutuhan.</p>
-        <button class="btn-secondary">Pelajari</button>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-links">
-        <a href="#">Home</a>
-        <a href="#">Kost</a>
-        <a href="#">Services</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Penkost<span>PBG</span>. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      navToggle.classList.toggle('active');
-    });
-  </script>
-    
+    </footer>
     <script>
-      feather.replace();
+        document.addEventListener('DOMContentLoaded',function(){const navToggle=document.getElementById('nav-toggle'),navLinks=document.getElementById('nav-links'),menuOverlay=document.getElementById('menu-overlay');navToggle&&navToggle.addEventListener('click',()=>{navToggle.classList.toggle('active'),navLinks.classList.toggle('active'),menuOverlay.classList.toggle('active')}),menuOverlay&&menuOverlay.addEventListener('click',()=>{navToggle.classList.remove('active'),navLinks.classList.remove('active'),menuOverlay.classList.remove('active')}),feather.replace()});
     </script>
 </body>
 </html>
