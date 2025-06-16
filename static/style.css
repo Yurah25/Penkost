@@ -637,3 +637,28 @@ body {
     padding: 30px;
   }
 }
+
+/* Tombol login versi mobile (dalam menu dropdown) */
+.nav-login-mobile {
+  display: none; /* Default: disembunyikan di desktop */
+}
+
+@media (max-width: 768px) {
+  .nav-login-desktop {
+    display: none; /* Sembunyikan tombol login versi desktop */
+  }
+
+  .nav-login-mobile {
+    display: block;
+  }
+
+  .nav-login-mobile a.btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    margin-top: 10px;
+    display: inline-block;
+  }
+}

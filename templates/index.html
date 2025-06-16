@@ -22,9 +22,14 @@
                     <li><a href="{{ url_for('about') }}">Tentang</a></li>
                     <li><a href="{{ url_for('search_kost') }}">Cari Kost</a></li>
                     <li><a href="{{ url_for('contact') }}">Kontak</a></li>
+                    <li class="nav-login-mobile">
+      <a href="{{ url_for('login') }}" class="btn">Login</a>
+    </li>
+                    <li class="nav-login-desktop"></li>
+    <a href="{{ url_for('login') }}" class="btn nav-login-desktop">Login</a>
+    </li>
                 </ul>
             </nav>
-            <a href="{{ url_for('login') }}" class="btn">Login</a>
             <div class="nav-toggle" id="nav-toggle">
                 <span></span><span></span><span></span>
             </div>
