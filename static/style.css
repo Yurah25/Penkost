@@ -410,72 +410,79 @@ body {
     color: var(--text-light);
 }
 
-/* kost.html */
 .search-page-container {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-}
-.filter-sidebar {
-  flex: 0 0 280px;
-  background: var(--light-gray-color);
-  padding: 25px;
-  border-radius: var(--border-radius);
-  position: sticky;
-  top: 100px; /* 70px navbar + 30px space */
-}
-.results-grid {
-  flex: 1;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
 }
 
-/* detail_kost.html */
-.detail-container {
-  display: grid;
-  gap: 50px;
+/* --- Gaya Filter Sidebar BARU --- */
+.filter-sidebar {
+    flex: 0 0 300px;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+    position: sticky;
+    top: 100px;
+    border: 1px solid #e9ecef;
 }
-.detail-grid {
-  display: grid;
-  grid-template-columns: 2fr 1.5fr;
-  gap: 40px;
-  align-items: flex-start;
+.filter-sidebar h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 15px;
 }
-.detail-kost-img {
+.filter-group {
+    margin-bottom: 25px;
+}
+.filter-group > label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #495057;
+}
+.filter-group select {
     width: 100%;
-    height: auto;
+    padding: 12px;
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
+    font-size: 0.95rem;
+    background-color: var(--white-color);
+    transition: border-color 0.3s ease;
 }
-.fasilitas-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0;
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
-.fasilitas-list li {
-  background: var(--light-gray-color);
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+.filter-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
-.action-buttons {
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+.filter-option input[type="radio"],
+.filter-option input[type="checkbox"] {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
 }
-.map-container {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  border: 1px solid var(--border-color);
+.filter-option label {
+    font-size: 0.95rem;
+    color: var(--text-color);
 }
-.map-container iframe {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+.filter-sidebar .btn {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.results-grid {
+    flex: 1;
 }
 
 /* kontak.html */
