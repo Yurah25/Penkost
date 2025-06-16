@@ -8,8 +8,10 @@ app = Flask(__name__)
 KOST_DATA = [
     {
         "id": 1, "nama": "Kost Melati Tipe A", "harga": 750000, "tipe_sewa": "bulan",
-        "lokasi": "Purbalingga Lor", "foto": "kost1.jpg", "fasilitas": ["Isi Lengkap", "Kamar Mandi Dalam", "Wifi"],
-        "tipe_kost": "Campur", # Tipe kost baru
+        "lokasi": "Purbalingga Lor", "foto": "outdoor3.jpg",
+        "galeri_foto": ["centro.jpg", "hero.jpeg", "outdoor2.jpg"], # TAMBAHAN
+        "fasilitas": ["Isi Lengkap", "Kamar Mandi Dalam", "Wifi"],
+        "tipe_kost": "Campur",
         "deskripsi": "Kost nyaman dengan fasilitas lengkap, sangat cocok untuk mahasiswa atau karyawan. Lokasi strategis dekat dengan pusat perbelanjaan dan area perkantoran. Lingkungan aman dan tenang.",
         "whatsapp": "6281234567890",
         "instagram": "kostmelati.pbg",
@@ -18,8 +20,10 @@ KOST_DATA = [
     },
     {
         "id": 2, "nama": "Kost Mawar Exclusive", "harga": 1200000, "tipe_sewa": "bulan",
-        "lokasi": "Pusat Kota", "foto": "kost2.jpg", "fasilitas": ["Isi Lengkap", "Kamar Mandi Dalam", "AC", "TV Kabel"],
-        "tipe_kost": "Campur", # Tipe kost baru
+        "lokasi": "Pusat Kota", "foto": "kost2.jpg",
+        "galeri_foto": ["kost2_view1.jpg", "kost2_view2.jpg", "kost2_view3.jpg"], # TAMBAHAN
+        "fasilitas": ["Isi Lengkap", "Kamar Mandi Dalam", "AC", "TV Kabel"],
+        "tipe_kost": "Campur",
         "deskripsi": "Kost exclusive di jantung kota Purbalingga. Akses mudah ke mana saja. Dilengkapi dengan AC dan fasilitas modern untuk kenyamanan maksimal Anda.",
         "whatsapp": "6281234567891",
         "instagram": "kostmawar.exclusive",
@@ -28,7 +32,9 @@ KOST_DATA = [
     },
     {
         "id": 8, "nama": "Kost Putri Anggrek", "harga": 850000, "tipe_sewa": "bulan",
-        "lokasi": "Dekat Kampus", "foto": "kost8.jpg", "fasilitas": ["Isi Lengkap", "Kamar Mandi Dalam", "AC", "Khusus Putri"],
+        "lokasi": "Dekat Kampus", "foto": "kost8.jpg",
+        "galeri_foto": ["kost8_view1.jpg", "kost8_view2.jpg", "kost8_view3.jpg"], # TAMBAHAN
+        "fasilitas": ["Isi Lengkap", "Kamar Mandi Dalam", "AC", "Khusus Putri"],
         "tipe_kost": "Putri",
         "deskripsi": "Kost khusus putri yang aman dan bersih. Berada di lingkungan yang kondusif untuk belajar, hanya 5 menit jalan kaki dari kampus.",
         "whatsapp": "6281234567898",
@@ -38,8 +44,10 @@ KOST_DATA = [
     },
     {
         "id": 9, "nama": "Kost Putra Gagah", "harga": 800000, "tipe_sewa": "bulan",
-        "lokasi": "Dekat GOR", "foto": "kost9.jpg", "fasilitas": ["Kamar Mandi Dalam", "Wifi", "Parkir Motor Luas"],
-        "tipe_kost": "Putra", # Tipe kost baru
+        "lokasi": "Dekat GOR", "foto": "kost9.jpg",
+        "galeri_foto": ["kost9_view1.jpg", "kost9_view2.jpg", "kost9_view3.jpg"], # TAMBAHAN
+        "fasilitas": ["Kamar Mandi Dalam", "Wifi", "Parkir Motor Luas"],
+        "tipe_kost": "Putra",
         "deskripsi": "Kost khusus putra yang strategis dekat GOR. Suasana tenang, cocok untuk istirahat. Parkir motor aman dan luas.",
         "whatsapp": "6281234567899",
         "instagram": "kostputra.gagah",
@@ -47,7 +55,6 @@ KOST_DATA = [
         "tanggal_post": datetime(2025, 6, 10)
     }
 ]
-
 def format_rupiah(value):
     return f"Rp {value:,.0f}".replace(",", ".")
 

@@ -35,8 +35,17 @@
             <div class="container detail-container">
                 <div class="detail-grid">
                     <div>
-                        <img src="{{ url_for('static', filename='images/' + kost.foto) }}" alt="{{ kost.nama }}" class="detail-kost-img">
-                    </div>
+    <img src="{{ url_for('static', filename='images/' + kost.foto) }}" alt="{{ kost.nama }}" class="detail-kost-img" id="gambar-utama">
+    <div class="galeri-thumbnail-container">
+    <img src="{{ url_for('static', filename='images/' + kost.foto) }}" alt="Thumbnail Utama" class="thumbnail-img" onclick="gantiGambar(this.src)">
+
+    {% if kost.galeri_foto %}
+        {% for foto_tambahan in kost.galeri_foto %}
+        <img src="{{ url_for('static', filename='images/' + foto_tambahan) }}" alt="Thumbnail {{ loop.index }}" class="thumbnail-img" onclick="gantiGambar(this.src)">
+        {% endfor %}
+    {% endif %}
+</div>
+</div>
                     <div>
                         <h1>{{ kost.nama }}</h1>
                         <p class="lokasi"><i data-feather="map-pin"></i> {{ kost.lokasi }}</p>
@@ -72,7 +81,7 @@
             
             <div class="footer-col footer-about">
                 <div class="logo">
-                    <a href="{{ url_for('index') }}"><h4>PENKOST<span>PBG</span></h4></a>
+                    <a href="{{ url_for('index') }}"><h4>PENKOST<span>PBG</span></h></a>
                 </div>
                 <p>Platform terpercaya untuk membantu Anda menemukan kost idaman di Purbalingga dengan cepat, mudah, dan aman.</p>
             </div>
@@ -117,8 +126,15 @@
         </div>
     </div>
 </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded',function(){const navToggle=document.getElementById('nav-toggle'),navLinks=document.getElementById('nav-links'),menuOverlay=document.getElementById('menu-overlay');navToggle&&navToggle.addEventListener('click',()=>{navToggle.classList.toggle('active'),navLinks.classList.toggle('active'),menuOverlay.classList.toggle('active')}),menuOverlay&&menuOverlay.addEventListener('click',()=>{navToggle.classList.remove('active'),navLinks.classList.remove('active'),menuOverlay.classList.remove('active')}),feather.replace()});
-    </script>
+<script>
+    document.addEventListener('DOMContentLoaded',function(){const navToggle=document.getElementById('nav-toggle'),navLinks=document.getElementById('nav-links'),menuOverlay=document.getElementById('menu-overlay');navToggle&&navToggle.addEventListener('click',()=>{navToggle.classList.toggle('active'),navLinks.classList.toggle('active'),menuOverlay.classList.toggle('active')}),menuOverlay&&menuOverlay.addEventListener('click',()=>{navToggle.classList.remove('active'),navLinks.classList.remove('active'),menuOverlay.classList.remove('active')}),feather.replace()});
+</script>
+
+<script>
+    function gantiGambar(srcGambarBaru) {
+        const gambarUtama = document.getElementById('gambar-utama');
+        gambarUtama.src = srcGambarBaru;
+    }
+</script>
 </body>
 </html>
