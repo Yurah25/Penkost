@@ -53,6 +53,54 @@ KOST_DATA = [
         "instagram": "kostputra.gagah",
         "maps_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.403920993514!2d109.3664973142756!3d-7.420038975101034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65598da2355555%3A0x863375888e2f0332!2sAlun-Alun%20Purbalingga!5e0!3m2!1sid!2sid!4v1626325345123!5m2!1sid!2sid",
         "tanggal_post": datetime(2025, 6, 10)
+    },
+    {
+        "id": 10, "nama": "Kost Pak Hendro", "harga": 800000, "tipe_sewa": "bulan",
+        "lokasi": "Belakang FT", "foto": "kost10.jpg",
+        "galeri_foto": ["kost10_view1.jpg", "kost10_view2.jpg", "kost10_view3.jpg"], # TAMBAHAN
+        "fasilitas": ["Kamar Mandi Dalam", "Dapur", "Wifi", "Parkir Motor Luas"],
+        "tipe_kost": "Putra",
+        "deskripsi": "Kost khusus putra di belakang Fakultas Teknik. Fasilitas memadai dan strategis.",
+        "whatsapp": "6281234567910",
+        "instagram": "hendrokost_",
+        "maps_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.3353901048695!2d109.33871669999999!3d-7.428087099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655941696aadc9%3A0xc227f7fa81c8ac8e!2sKost%20Pak%20Hendro%20(putra)!5e0!3m2!1sid!2sid!4v1750084636400!5m2!1sid!2sid",
+        "tanggal_post": datetime(2025, 6, 16)
+    },
+    {
+        "id": 11, "nama": "Wisma YOLANDAA", "harga": 7500000, "tipe_sewa": "tahun",
+        "lokasi": "Desa Blater", "foto": "kost11.jpg",
+        "galeri_foto": ["kost11_view1.jpg", "kost11_view2.jpg", "kost11_view3.jpg"], # TAMBAHAN
+        "fasilitas": ["Kamar Mandi Luar & Dalam", "Dapur", "Wifi", "Tempat Jemuran", "Parkir Motor Beratap"],
+        "tipe_kost": "Putra",
+        "deskripsi": "Kost khusus putra yang berjarak 100 meter dari kampus. Bisa ditempuh dengan berjalan kaki ke arah timur.",
+        "whatsapp": "6281234567911",
+        "instagram": "wisma_yolandaa",
+        "maps_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.333233949475!2d109.3397938!3d-7.428326599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559867d3347b3%3A0x849446a12c94de81!2sWisma%20YOLANDAA!5e0!3m2!1sid!2sid!4v1750084788725!5m2!1sid!2sid",
+        "tanggal_post": datetime(2025, 6, 16)
+    },
+    {
+        "id": 12, "nama": "Kost Panorama", "harga": 850000, "tipe_sewa": "bulan",
+        "lokasi": "Blater, Kalimanah", "foto": "kost12.jpg",
+        "galeri_foto": ["kost12_view1.jpg", "kost12_view2.jpg", "kost12_view3.jpg"], # TAMBAHAN
+        "fasilitas": ["Kamar Mandi Dalam", "Lemari Pakaian", "Dapur Umum", "MCB LIstrik Tiap Kamar", "Parkiran Dalam Area"],
+        "tipe_kost": "Putra",
+        "deskripsi": "Kost putar murah di blater.",
+        "whatsapp": "6281234567912",
+        "instagram": "kost_panorama",
+        "maps_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.29528510913!2d109.3394325!3d-7.432540599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559d23a3e365b%3A0x12c9d94faf23ac44!2sKOST%20PANORAMA!5e0!3m2!1sid!2sid!4v1750084957180!5m2!1sid!2sid",
+        "tanggal_post": datetime(2025, 6, 16)
+    },
+    {
+        "id": 13, "nama": "Wisma nabil blater Unsoed", "harga": 8000000, "tipe_sewa": "tahun",
+        "lokasi": "Blater, Kalimanah", "foto": "kost13.jpg",
+        "galeri_foto": ["kost13_view1.jpg", "kost13_view2.jpg", "kost13_view3.jpg"], # TAMBAHAN
+        "fasilitas": ["Kamar Mandi Dalam", "Lemari Pakaian", "Dapur Umum", "Wifi", "Parkiran Dalam Area"],
+        "tipe_kost": "Putra",
+        "deskripsi": "Kost putra yang nyaman dan bersih serta fasilitas lengkap.",
+        "whatsapp": "6281234567913",
+        "instagram": "wisma.nabil",
+        "maps_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.296694840015!2d109.34088639999999!3d-7.432384099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559cc9c833ebb%3A0xad27e89fc76b2dbd!2sWisma%20nabil%20blater%20Unsoed!5e0!3m2!1sid!2sid!4v1750085533726!5m2!1sid!2sid",
+        "tanggal_post": datetime(2025, 6, 16)
     }
 ]
 def format_rupiah(value):
