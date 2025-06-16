@@ -84,7 +84,7 @@ KOST_DATA = [
         "galeri_foto": ["kost12_view1.jpg", "kost12_view2.jpg", "kost12_view3.jpg"], # TAMBAHAN
         "fasilitas": ["Kamar Mandi Dalam", "Lemari Pakaian", "Dapur Umum", "MCB LIstrik Tiap Kamar", "Parkiran Dalam Area"],
         "tipe_kost": "Putra",
-        "deskripsi": "Kost putar murah di blater.",
+        "deskripsi": "Kost putra murah di blater.",
         "whatsapp": "6281234567912",
         "instagram": "kost_panorama",
         "maps_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.29528510913!2d109.3394325!3d-7.432540599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559d23a3e365b%3A0x12c9d94faf23ac44!2sKOST%20PANORAMA!5e0!3m2!1sid!2sid!4v1750084957180!5m2!1sid!2sid",
@@ -101,7 +101,32 @@ KOST_DATA = [
         "instagram": "wisma.nabil",
         "maps_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.296694840015!2d109.34088639999999!3d-7.432384099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559cc9c833ebb%3A0xad27e89fc76b2dbd!2sWisma%20nabil%20blater%20Unsoed!5e0!3m2!1sid!2sid!4v1750085533726!5m2!1sid!2sid",
         "tanggal_post": datetime(2025, 6, 16)
+    },
+    {
+        "id": 14, "nama": "Kost Blater 34", "harga": 850000, "tipe_sewa": "bulan",
+        "lokasi": "Blater, Kalimanah", "foto": "kost14.jpg",
+        "galeri_foto": ["kost14_view1.jpg", "kost14_view2.jpg", "kost14_view3.jpg"], # TAMBAHAN
+        "fasilitas": ["Kamar Mandi Dalam", "Lemari Pakaian", "Dapur Umum", "Wifi", "Free Air Listirk", "Parkiran Dalam Area"],
+        "tipe_kost": "Putra",
+        "deskripsi": "Kost putra terletak di desa Blater, dekat dengan kampus.",
+        "whatsapp": "6281234567914",
+        "instagram": "kost.blater34",
+        "maps_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.33472751082!2d109.33912199999999!3d-7.4281607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65595958fba3d7%3A0x6f991176e517cba6!2sKost%20Blater%2034!5e0!3m2!1sid!2sid!4v1750086536746!5m2!1sid!2sid",
+        "tanggal_post": datetime(2025, 6, 16)
+    },
+    {
+        "id": 15, "nama": "Wisma Biru", "harga": 750000, "tipe_sewa": "bulan",
+        "lokasi": "Dekat Kampus", "foto": "kost15.jpg",
+        "galeri_foto": ["kost15_view1.jpg", "kost15_view2.jpg", "kost15_view3.jpg"], # TAMBAHAN
+        "fasilitas": ["Kamar Mandi Dalam", "Dapur Umum", "Wifi", "Parkiran Dalam Area"],
+        "tipe_kost": "Putra",
+        "deskripsi": "Kost putra di blater. Di sponsori oleh WarBir. Banyak Wibu.",
+        "whatsapp": "6281234567915",
+        "instagram": "kost_panorama",
+        "maps_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.3284568512577!2d109.3399714!3d-7.4288571999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559f0ac7c1127%3A0xba80289732998829!2sKost%20Wisma%20Biru!5e0!3m2!1sid!2sid!4v1750086955411!5m2!1sid!2sid",
+        "tanggal_post": datetime(2025, 6, 16)
     }
+
 ]
 def format_rupiah(value):
     return f"Rp {value:,.0f}".replace(",", ".")
