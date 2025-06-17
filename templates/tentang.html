@@ -10,101 +10,125 @@
 <body>
     <div id="menu-overlay"></div>
     <header class="navbar">
-        <div class="container nav-container">
-          <div class="logo">            
-                <a href="{{ url_for('index') }}">
-                  <img class="img-logo" src="{{ url_for('static', filename='images/logo.png') }}">
-                  <h2>PENKOST<span>PBG</span></h2></a>  
-            </div>
-            <nav>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="{{ url_for('about') }}">Tentang</a></li>
-                    <li><a href="{{ url_for('search_kost') }}">Cari Kost</a></li>
-                    <li><a href="{{ url_for('contact') }}">Kontak</a></li>
-                </ul>
-            </nav>
-            <a href="{{ url_for('login') }}" class="btn">Login</a>
-            <div class="nav-toggle" id="nav-toggle">
-                <span></span><span></span><span></span>
+    <div class="container nav-container">
+      <div class="logo">
+            <a href="{{ url_for('index') }}">
+                <img class="img-logo" src="{{ url_for('static', filename='images/logo.png') }}">
+                <h2>PENKOST<span>PBG</span></h2>
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">Tentang</a></li>
+                <li><a href="{{ url_for('search_kost') }}">Cari Kost</a></li>
+                <li><a href="{{ url_for('contact') }}">Kontak</a></li>
+                <li class="nav-login-mobile">
+                    <a href="{{ url_for('login') }}" class="btn">Login</a>
+                </li>
+            </ul>
+        </nav>
+        <a href="{{ url_for('login') }}" class="btn nav-login-desktop">Login</a>
+        <div class="nav-toggle" id="nav-toggle">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</header>
+
+   <main>
+    <section class="page-section" style="padding-top: 80px;">
+        <div class="container">
+            <h2 class="section-title">Tentang PENKOSTPBG</h2>
+            <p class="section-subtitle">Platform terpercaya untuk menemukan kost idaman Anda di Purbalingga.</p>
+            
+            <div class="info-content">
+                <img src="{{ url_for('static', filename='images/tentang.png') }}" alt="Suasana Kerja Tim PENKOSTPBG">
+                
+                <div class="misi-visi-container">
+                    <div class="misi-visi-item">
+                        <div class="misi-visi-icon">
+                            <i data-feather="target"></i>
+                        </div>
+                        <div class="misi-visi-text">
+                            <h3>Misi Kami</h3>
+                            <p>1.	Menyediakan informasi terkait kost dengan detail fasilitas, harga, dan lokasi.<br>
+2.	Mempermudah transaksi melalui fitur pemesanan dan pembayaran online.<br>
+3.	Membangun ekosistem terpercaya bagi pemilik kost dan calon penghuni.
+</p>
+                        </div>
+                    </div>
+                    <div class="misi-visi-item">
+                        <div class="misi-visi-icon">
+                            <i data-feather="eye"></i>
+                        </div>
+                        <div class="misi-visi-text">
+                            <h3>Visi Kami</h3>
+                            <p>Menjadi platform utama yang memudahkan pencarian dan transaksi kost-kostan di Purbalingga dengan memberikan informasi yang lengkap, akurat, dan terpercaya kepada calon penghuni dan pemilik kost.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="page-section" style="background-color: var(--background-light);">
+        <div class="container">
+            <h2 class="section-title">Kenapa Memilih Kami?</h2>
+            <p class="section-subtitle">Kami menawarkan lebih dari sekadar daftar kost.</p>
+            <div class="card-container">
+                <div class="card feature-card">
+                    <i data-feather="shield" class="feature-icon"></i>
+                    <h4>Data Terverifikasi</h4>
+                    <p>Setiap listing kost kami usahakan telah melalui proses verifikasi untuk memastikan informasi yang akurat dan tepercaya.</p>
+                </div>
+                <div class="card feature-card">
+                    <i data-feather="search" class="feature-icon"></i>
+                    <h4>Pencarian Mudah</h4>
+                    <p>Dengan sistem filter yang lengkap, Anda dapat menemukan kost yang paling sesuai dengan kriteria Anda dalam hitungan detik.</p>
+                </div>
+                <div class="card feature-card">
+                    <i data-feather="message-circle" class="feature-icon"></i>
+                    <h4>Dukungan Penuh</h4>
+                    <p>Tim kami siap membantu Anda jika mengalami kendala atau memiliki pertanyaan seputar pencarian kost Anda.</p>
+                </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main>
-        <section class="page-section" style="padding-top: 80px;">
-            <div class="container">
-                <h2 class="section-title">Tentang PENKOSTPBG</h2>
-                <p class="section-subtitle">Platform terpercaya untuk menemukan kost idaman Anda di Purbalingga.</p>
-                <div class="info-content">
-                    <img src="{{ url_for('static', filename='images/team-photo.jpg') }}" alt="Tim PENKOSTPBG">
-                    <div class="info-text">
-                        <h3>Misi Kami</h3>
-                        <p>Misi kami adalah mempermudah para pencari kost, baik mahasiswa maupun pekerja, untuk menemukan hunian sementara yang nyaman, aman, dan sesuai dengan anggaran di area Purbalingga dan sekitarnya.</p>
-                        <h3>Visi Kami</h3>
-                        <p>Menjadi portal pencarian kost nomor satu dan terlengkap, dengan menyajikan data yang akurat, fitur pencarian yang canggih, dan layanan yang dapat diandalkan oleh semua pihak.</p>
+    <section class="page-section">
+        <div class="container">
+            <h2 class="section-title">Tim Kami</h2>
+            <p class="section-subtitle">Orang-orang berdedikasi di balik layar yang siap melayani Anda.</p>
+            <div class="card-container">
+                
+                <div class="card team-card">
+                    <img src="{{ url_for('static', filename='images/mel.jpg') }}" alt="C" class="team-avatar">
+                    <div class="card-content">
+                        <h4>Melysa Ayu Wulan Sari</h4>
+                        <p class="team-title">(H1D024013)</p>
+                        <p class="team-description">Mendesain, Membuat Web dan Membuat Laporan</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="page-section" style="background-color: var(--light-gray-color);">
-            <div class="container">
-                <h2 class="section-title">Kenapa Memilih Kami?</h2>
-                <p class="section-subtitle">Kami menawarkan lebih dari sekadar daftar kost.</p>
-                <div class="card-container">
-                    <div class="card feature-card">
-                        <i data-feather="shield" class="feature-icon"></i>
-                        <h4>Data Terverifikasi</h4>
-                        <p>Setiap listing kost kami usahakan telah melalui proses verifikasi untuk memastikan informasi yang akurat dan tepercaya.</p>
-                    </div>
-                    <div class="card feature-card">
-                        <i data-feather="search" class="feature-icon"></i>
-                        <h4>Pencarian Mudah</h4>
-                        <p>Dengan sistem filter yang lengkap, Anda dapat menemukan kost yang paling sesuai dengan kriteria Anda dalam hitungan detik.</p>
-                    </div>
-                    <div class="card feature-card">
-                        <i data-feather="message-circle" class="feature-icon"></i>
-                        <h4>Dukungan Penuh</h4>
-                        <p>Tim kami siap membantu Anda jika mengalami kendala atau memiliki pertanyaan seputar pencarian kost Anda.</p>
+                <div class="card team-card">
+                    <img src="{{ url_for('static', filename='images/4x6.jpg') }}" alt="C" class="team-avatar">
+                    <div class="card-content">
+                        <h4>Yusuf Rafii Ahmad</h4>
+                        <p class="team-title">(H1D024049)</p>
+                        <p class="team-description">Mendesain, Membuat Web dan Membuat Laporan</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="page-section">
-            <div class="container">
-                <h2 class="section-title">Tim Kami</h2>
-                <p class="section-subtitle">Orang-orang berdedikasi di balik layar yang siap melayani Anda.</p>
-                <div class="card-container">
-                    <div class="card team-card">
-                        <img src="{{ url_for('static', filename='images/profil1.jpg') }}" alt="CEO" class="team-avatar">
-                        <div class="card-content">
-                            <h4>Ahmad Yusuf</h4>
-                            <p class="team-title">Chief Executive Officer</p>
-                            <p>Bertanggung jawab atas visi dan arah strategis perusahaan.</p>
-                        </div>
-                    </div>
-                    <div class="card team-card">
-                        <img src="{{ url_for('static', filename='images/profil2.jpg') }}" alt="CTO" class="team-avatar">
-                        <div class="card-content">
-                            <h4>Siti Nurhaliza</h4>
-                            <p class="team-title">Chief Technology Officer</p>
-                            <p>Memimpin pengembangan teknis dan inovasi platform.</p>
-                        </div>
-                    </div>
-                    <div class="card team-card">
-                        <img src="{{ url_for('static', filename='images/profil3.jpg') }}" alt="Marketing Head" class="team-avatar">
-                        <div class="card-content">
-                            <h4>Budi Santoso</h4>
-                            <p class="team-title">Head of Marketing</p>
-                            <p>Menjangkau para pemilik dan pencari kost di seluruh area.</p>
-                        </div>
+                <div class="card team-card">
+                    <img src="{{ url_for('static', filename='images/al.jpg') }}" alt="M]" class="team-avatar">
+                    <div class="card-content">
+                        <h4>Al Jatsiya Profitar Taqwala</h4>
+                        <p class="team-title">(H1D024095)</p>
+                        <p class="team-description">Mendesain, Membuat Web dan Membuat Laporan</p>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+                </div>
+        </div>
+    </section>
+</main>
 
     <footer class="footer">
     <div class="container">

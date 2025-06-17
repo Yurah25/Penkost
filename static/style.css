@@ -2,6 +2,7 @@
 /* === STYLE.CSS FINAL - PENKOSTPBG (REVISI TOTAL) === */
 /* ======================================================= */
 
+
 /* === 1. Reset & Variabel Global === */
 :root {
   --primary-color: #007bff;
@@ -380,23 +381,33 @@ body {
   gap: 30px; /* Jarak antar kartu */
 }
 .card {
-  background: var(--white-color);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
+    background: var(--white-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    width: 350px; /* 1. BARU: Menetapkan lebar kartu yang konsisten */
+    display: flex; /* 2. BARU: Menjadikan kartu sebagai flex container */
+    flex-direction: column; /* 3. BARU: Mengatur agar item di dalamnya tersusun vertikal */
+}
+.card-content .btn {
+    margin-top: auto; /* Mendorong tombol ke bagian paling bawah dari .card-content */
 }
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 .card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+    width: 100%;
+    height: 200px; /* A. TINGGI GAMBAR: Tetap 200px, ini adalah tinggi 'kotak' untuk gambar */
+    object-fit: cover; /* B. KUNCI UTAMA: Gambar akan menyesuaikan diri (terpotong) agar pas tanpa distorsi */
 }
+
 .card-content {
-  padding: 25px;
+    padding: 25px;
+    display: flex; /* 1. BARU: Menjadikan area konten sebagai flex container juga */
+    flex-direction: column; /* 2. BARU: Mengatur item di dalamnya (teks & tombol) secara vertikal */
+    flex-grow: 1; /* 3. BARU: Perintah agar area konten ini mengisi sisa ruang kosong di kartu */
 }
 .card .harga {
     font-size: 1.1rem;
@@ -539,22 +550,24 @@ body {
 
 /* === Gaya untuk Galeri Foto Detail Kost (BARU) === */
 .galeri-thumbnail-container {
-    grid-column: 1 / 2; /* Pastikan galeri tetap di kolom kiri */
+    grid-column: 1 / 2; 
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: -30px; /* Tarik sedikit ke atas agar lebih dekat dengan gambar utama */
+    gap: 10px; /* Jarak untuk layar besar */
+    margin-top: -30px; 
     margin-bottom: 30px;
 }
+
 .thumbnail-img {
-    width: 90px;
-    height: 60px;
+    width: 90px;  /* Ukuran awal untuk layar besar (desktop) */
+    height: 60px; /* Ukuran awal untuk layar besar (desktop) */
     object-fit: cover;
     border-radius: var(--border-radius);
     cursor: pointer;
     border: 2px solid transparent;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: all 0.2s ease; /* Transisi untuk semua properti */
 }
+
 .thumbnail-img:hover {
     transform: scale(1.05);
     border-color: var(--primary-color);
@@ -656,9 +669,52 @@ body {
 }
 
 /* === Gaya Tambahan untuk Halaman Tentang === */
+/* ========================================= */
+/* === PERBAIKAN KARTU FITUR (LEBIH RAPI) === */
+/* ========================================= */
+
 .feature-card {
-  text-align: center;
-  padding: 20px;
+    display: flex; /* Mengaktifkan flexbox untuk kontrol layout internal */
+    flex-direction: column; /* Mengatur item di dalam kartu secara vertikal */
+    align-items: center; /* Membuat semua item di dalam kartu center secara horizontal */
+    text-align: center;
+    padding: 40px 30px; /* Tambah padding agar konten lebih "bernapas" */
+    height: 100%; /* KUNCI UTAMA: Menjamin semua kartu punya tinggi yang sama */
+    background-color: var(--white-color); /* Pastikan background putih jika belum ada */
+    border: 1px solid var(--border-color); /* Tambah border halus */
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+/* Atur ulang hover effect yang sudah ada agar lebih halus */
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.1);
+}
+
+/* Beri jarak yang konsisten antar elemen di dalam kartu */
+.feature-card .feature-icon {
+    margin-bottom: 25px; /* Jarak dari ikon ke judul */
+    transition: transform 0.3s ease; /* Transisi untuk efek hover */
+}
+
+.feature-card h4 {
+    margin-bottom: 15px; /* Jarak dari judul ke deskripsi */
+    font-size: 1.25rem; /* Sedikit perbesar judul agar lebih menonjol */
+    color: var(--secondary-color);
+}
+
+.feature-card p {
+    font-size: 0.95rem; /* Sedikit sesuaikan ukuran font deskripsi */
+    color: var(--text-light);
+    line-height: 1.7; /* Perbaiki jarak antar baris agar lebih mudah dibaca */
+    flex-grow: 1; /* Membuat paragraf mengisi ruang sisa jika perlu */
+}
+
+/* Efek ikon terangkat saat kartu di-hover */
+.feature-card:hover .feature-icon {
+    transform: translateY(-5px) scale(1.05);
 }
 .feature-icon {
   width: 64px;
@@ -666,23 +722,92 @@ body {
   color: var(--primary-color);
   margin-bottom: 20px;
 }
+/* ================================================== */
+/* === STYLE TAMBAHAN UNTUK HALAMAN TENTANG KAMI  === */
+/* ================================================== */
+
+/* --- Penataan Ulang Bagian Misi & Visi --- */
+.misi-visi-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Jarak antara Misi dan Visi */
+}
+
+.misi-visi-item {
+    display: flex;
+    align-items: flex-start; /* Ikon dan teks sejajar di atas */
+    gap: 20px;
+}
+
+.misi-visi-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background-color: var(--background-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+.misi-visi-icon i {
+    width: 32px;
+    height: 32px;
+}
+
+.misi-visi-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+}
+
+.misi-visi-text p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* --- Penataan Ulang Kartu Tim --- */
 .team-card {
-  text-align: center;
+    border: 1px solid var(--border-color); /* Tambah border halus */
 }
-.team-avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 20px auto;
-  border: 5px solid var(--white-color);
-  box-shadow: var(--shadow-sm);
+
+.team-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.1);
 }
-.team-title {
-  color: var(--text-light);
-  font-weight: 500;
-  margin-top: -15px;
+
+.team-description {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 20px; /* Jarak sebelum ikon sosial media */
 }
+
+.team-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: auto; /* Mendorong ikon sosial media ke bawah kartu */
+}
+
+.team-socials a {
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.team-socials a:hover {
+    color: var(--primary-color);
+}
+
+/* Menyesuaikan flexbox di dalam kartu agar deskripsi dan sosial media rapi */
+.team-card .card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
 
 /* === 6. Media Queries (Bagian Responsif) === */
 
@@ -745,6 +870,13 @@ body {
   }
   .section-title { font-size: 2rem; }
   .hero h1 { font-size: 2.5rem; }
+   .thumbnail-img {
+        width: 75px;  /* Thumbnail sedikit lebih kecil */
+        height: 50px;
+    }
+    .galeri-thumbnail-container {
+        gap: 8px; /* Jarak antar thumbnail juga sedikit lebih kecil */
+    }
 }
 
 @media (max-width: 480px) {
@@ -764,6 +896,14 @@ body {
   .login-container {
     padding: 30px;
   }
+  .thumbnail-img {
+        width: 60px;  /* Thumbnail menjadi lebih kecil lagi */
+        height: 40px;
+    }
+    .galeri-thumbnail-container {
+        gap: 6px; /* Jarak menjadi lebih rapat */
+        margin-top: -20px; /* Sesuaikan margin agar pas di layar kecil */
+    }
 }
 
 /* Tombol login versi mobile (dalam menu dropdown) */

@@ -10,26 +10,30 @@
 <body>
     <div id="menu-overlay"></div>
     <header class="navbar">
-        <div class="container nav-container">
-          <div class="logo">            
-                <a href="{{ url_for('index') }}">
-                  <img class="img-logo" src="{{ url_for('static', filename='images/logo.png') }}">
-                  <h2>PENKOST<span>PBG</span></h2></a>  
-            </div>
-            <nav>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="{{ url_for('about') }}">Tentang</a></li>
-                    <li><a href="{{ url_for('search_kost') }}">Cari Kost</a></li>
-                    <li><a href="{{ url_for('contact') }}">Kontak</a></li>
-                </ul>
-            </nav>
-            <a href="{{ url_for('login') }}" class="btn">Login</a>
-            <div class="nav-toggle" id="nav-toggle">
-                <span></span><span></span><span></span>
-            </div>
+    <div class="container nav-container">
+      <div class="logo"> 
+            <a href="{{ url_for('index') }}">
+                <img class="img-logo" src="{{ url_for('static', filename='images/logo.png') }}">
+                <h2>PENKOST<span>PBG</span></h2>
+            </a> 
         </div>
-    </header>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">Tentang</a></li>
+                <li><a href="{{ url_for('search_kost') }}">Cari Kost</a></li>
+                <li><a href="{{ url_for('contact') }}">Kontak</a></li>
+                <li class="nav-login-mobile">
+                    <a href="{{ url_for('login') }}" class="btn">Login</a>
+                </li>
+            </ul>
+        </nav>
+        <a href="{{ url_for('login') }}" class="btn nav-login-desktop">Login</a>
+        <div class="nav-toggle" id="nav-toggle">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</header>
     <main>
         <section class="page-section">
             <div class="container">
@@ -38,12 +42,12 @@
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h3>Informasi Kontak</h3>
-                        <p><i data-feather="map-pin"></i> Jl. Jenderal Soedirman No. 7, Purwokerto</p>
-                        <p><i data-feather="phone"></i> (0281) 123-456</p>
+                        <p><i data-feather="map-pin"></i> fakultas Teknik Unsoed</p>
+                        <p><i data-feather="phone"></i> +62881 0245 01933</p>
                         <p><i data-feather="mail"></i> info@penkostpbg.com</p>
                         <div class="detail-map" style="margin-top: 20px;">
                             <div class="map-container">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.403920993514!2d109.3664973142756!3d-7.420038975101034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65598da2355555%3A0x863375888e2f0332!2sAlun-Alun%20Purbalingga!5e0!3m2!1sid!2sid!4v1626325345123!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.3203026511637!2d109.33490383887434!3d-7.429762813096956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559f4d10d375f%3A0x57deaed7adab4ca8!2sGedung%20Pendidikan%20Fakultas%20Teknik%20Unsoed!5e0!3m2!1sid!2sid!4v1750139034672!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>

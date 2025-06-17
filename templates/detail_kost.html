@@ -10,26 +10,30 @@
 <body>
     <div id="menu-overlay"></div>
     <header class="navbar">
-        <div class="container nav-container">
-          <div class="logo">            
-                <a href="{{ url_for('index') }}">
-                  <img class="img-logo" src="{{ url_for('static', filename='images/logo.png') }}">
-                  <h2>PENKOST<span>PBG</span></h2></a>  
-            </div>
-            <nav>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="{{ url_for('about') }}">Tentang</a></li>
-                    <li><a href="{{ url_for('search_kost') }}">Cari Kost</a></li>
-                    <li><a href="{{ url_for('contact') }}">Kontak</a></li>
-                </ul>
-            </nav>
-            <a href="{{ url_for('login') }}" class="btn">Login</a>
-            <div class="nav-toggle" id="nav-toggle">
-                <span></span><span></span><span></span>
-            </div>
+    <div class="container nav-container">
+      <div class="logo">
+            <a href="{{ url_for('index') }}">
+                <img class="img-logo" src="{{ url_for('static', filename='images/logo.png') }}">
+                <h2>PENKOST<span>PBG</span></h2>
+            </a>
         </div>
-    </header>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">Tentang</a></li>
+                <li><a href="{{ url_for('search_kost') }}">Cari Kost</a></li>
+                <li><a href="{{ url_for('contact') }}">Kontak</a></li>
+                <li class="nav-login-mobile">
+                    <a href="{{ url_for('login') }}" class="btn">Login</a>
+                </li>
+            </ul>
+        </nav>
+        <a href="{{ url_for('login') }}" class="btn nav-login-desktop">Login</a>
+        <div class="nav-toggle" id="nav-toggle">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</header>
     <main>
         <section class="page-section">
             <div class="container detail-container">
@@ -57,7 +61,7 @@
                             {% endfor %}
                         </ul>
                         <div class="action-buttons">
-                            <a href="https://wa.me/{{ kost.whatsapp }}" target="_blank" class="btn btn-whatsapp"><i data-feather="message-circle"></i> Hubungi via WhatsApp</a>
+                            <a href="https://wa.me/{{ kost.whatsapp }}?text=Halo,%20saya%20tertarik%20dengan%20salah%20satu%20kost%20anda" target="_blank" class="btn btn-whatsapp"><i data-feather="message-circle"></i> Hubungi via WhatsApp</a>
                             <a href="https://instagram.com/{{ kost.instagram }}" target="_blank" class="btn btn-instagram"><i data-feather="instagram"></i> Lihat Instagram</a>
                         </div>
                     </div>
